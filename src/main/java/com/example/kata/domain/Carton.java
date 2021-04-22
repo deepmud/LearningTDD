@@ -17,7 +17,7 @@ public class Carton {
     public Carton() {
     }
 
-    public Carton( int cartonId,String cartonName,String cartonShape, boolean isFull) {
+    public Carton(String cartonName,String cartonShape, boolean isFull) {
         this.cartonName = cartonName;
         this. cartonShape = cartonShape;
         this.isFull = isFull;
@@ -37,5 +37,15 @@ public class Carton {
 
     public String getCartonName() {
         return cartonName;
+    }
+
+    @Override
+    public String toString() {
+        return "Carton{" +
+                "cartonId=" + cartonId +
+                ", cartonName='" + cartonName + '\'' +
+                ", cartonShape='" + cartonShape + '\'' +
+                ", isFull=" + isFull +
+                '}';
     }
 }

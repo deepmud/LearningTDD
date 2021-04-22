@@ -1,36 +1,18 @@
 package com.example.kata.service;
 
 import com.example.kata.domain.Carton;
-import com.example.kata.repository.KataRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-@Service
-public class Kataservice {
+public interface Kataservice {
 
-    private KataRepository kataRepository;
+    public Carton save(Integer g);
 
+    public List<Carton> findAlll();
 
-    public Kataservice(@Autowired KataRepository kataRepository) {
-        this.kataRepository = kataRepository;
-    }
+    public List<Carton> findAll();
 
-    public Carton save(Integer g){
-        Carton carton1 = new Carton(1,"blue","cube",true);
-        return kataRepository.save(carton1);
-    }
+    Optional<Carton> findById(int i);
 
-    public List<Carton> findAlll() {
-
-        Carton carton1 = new Carton(1,"blue","cube",true);
-        kataRepository.save(carton1);
-
-       return kataRepository.findAll();
-    }
-
-    public List<Carton> findAll() {
-        return kataRepository.findAll();
-    }
 }
